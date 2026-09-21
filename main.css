@@ -1,0 +1,15 @@
+h1{
+color: red;
+text-align: center;
+
+}
+
+body{
+    background-color:lightblue;
+}
+
+.complete{
+
+    text-decoration: line-through; 
+    text-decoration-color: red;
+}
