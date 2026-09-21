@@ -8,7 +8,7 @@ body{
     background-color:lightblue;
 }
 
-.complete{
+.completed{
 
     text-decoration: line-through; 
     text-decoration-color: red;
