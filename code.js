@@ -1,12 +1,9 @@
-
-
-
 const addbtn = document.querySelector("#addBtn");
 const input = document.querySelector("#adToDo");
 const firstList = document.querySelector("#toDoList");
 const info =document.querySelector("#info");
 const completed = document.querySelector("#completed");
-let compleatedToDo = 0;
+let completedToDo = 0;
 const myToDo = [];
 
 addbtn.addEventListener(
@@ -21,7 +18,12 @@ if (text === ""){
     info.textContent = "Please enter a task";
     return;
 }
-    myToDo.push(text);
+    const toDoObject ={
+        todoItem:text,
+        completed:false
+    }
+    toDoObject.todoItem = text;
+    myToDo.push(toDoObject);
     const firstElement = document.createElement("li");
     firstList.appendChild(firstElement);
 
@@ -33,21 +35,34 @@ if (text === ""){
         "click",
         function(){
           if(firstElementLabel.getAttribute("class") == "completed"){
-           // remove class
-           firstElement.setAttribute("class", "");
-           compleatedToDo --;
-           
-          }
+           toDoObject.completed=false
+           firstElementLabel.setAttribute("class", "");
+           completedToDo--;
+           }
           else{
+            toDoObject.completed=true
             firstElementLabel.setAttribute("class", "completed");
-            compleatedToDo ++;
-            //add clas
-          }
-          compleated.textContent = `${compleatedToDo} compleated`; 
+            completedToDo++;
+             }
+          completed.textContent = `${completedToDo} completed`; 
         }
     )
-    
+    const trashCan = document.createElement("span");
+    trashCan.innerHTML = "🗑️";
+    firstElement.appendChild(trashCan);
+    trashCan.addEventListener(
+        "click",
+         function(){
+        const index=myToDo.map(t => t.todoItem).indexOf(toDoObject.todoItem);
+        myToDo.splice(index,1)
+  
+        firstElement.remove();
+});
+
+ //myToDo.map(t => t.todoItem).indexOf()
+ //myToDo.slice(?,?);
+
+
     input.value = "";
 } 
 
-    
