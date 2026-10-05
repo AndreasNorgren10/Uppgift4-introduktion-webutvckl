@@ -1,15 +1,53 @@
-h1{
-color: red;
-text-align: center;
-
-}
-
 body{
-    background-color:lightblue;
+   min-height: 100vh;
+    background: linear-gradient(to top, rgb(240, 130, 148), pink);
 }
+
+#container{
+
+     background-color:white;
+    width:300px;
+    text-align:center;
+    margin: 0 auto;
+    padding:20px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+
+}
+
+.animated{
+    animation-name: fall-Down;
+    animation-delay: 0.5s;
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+
+}
+
 
 .completed{
 
     text-decoration: line-through; 
-    text-decoration-color: red;
+    text-decoration-color: grey;
+}
+
+
+@keyframes fall-Down {
+    0%{
+      top: -100px;
+    }
+    40%{
+      top: 20px;
+    }
+
+    60%{
+        top:100px;
+
+    }
+    80%{
+        top:130px;
+    }
+
+    100%{
+        top: 100px;
+    }
 }
