@@ -16,6 +16,7 @@ const text = input.value;
 
 if (text === ""){
     info.textContent = "Please enter a task";
+    info.classList.add("error");
     return;
 }
     const toDoObject ={
