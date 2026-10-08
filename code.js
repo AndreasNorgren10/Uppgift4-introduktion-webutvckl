@@ -59,6 +59,7 @@ if (text === ""){
     //Här gör jag en lyssnare som lyssnar på när man klickar på papperskorgen och tar bort uppgiften från listan.
     const trashCan = document.createElement("span");
     trashCan.innerHTML = "🗑️";
+    trashCan.id="trash";
     firstElement.appendChild(trashCan);
     trashCan.addEventListener(
         "click",
