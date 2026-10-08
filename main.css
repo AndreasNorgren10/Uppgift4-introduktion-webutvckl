@@ -19,8 +19,6 @@ ul{
 
 #trash{
    margin-left: 10px;
-
-
 }
 
 #container{
@@ -31,7 +29,6 @@ ul{
     margin: 0 auto;
     padding:20px;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
-
 }
 
 .animated{
@@ -40,14 +37,12 @@ ul{
     animation-duration: 2s;
     animation-fill-mode: forwards;
     animation-timing-function: linear;
-
 }
 
-
 .completed{
-
     text-decoration: line-through; 
     text-decoration-color: grey;
+    animation:slideUp 0.5s ease-out;
 }
 
 .FadeIn{
@@ -56,12 +51,11 @@ ul{
     animation-delay: 0.5s;
     animation-duration: 2s;
     animation-fill-mode: forwards;
-    
-
 }
 
 li{
     animation:FadeIn 2s ease-out;
+    animation:slideUp 0.5s ease-out;
 }
 
 .error{
@@ -70,9 +64,6 @@ li{
     animation-iteration-count: 3;
 }
 
-
-
-
 @keyframes fall-Down {
       0% {
     transform: translateY(-200px);
@@ -80,37 +71,23 @@ li{
   }
   30% {
     transform: translateY(20px);
-    opacity: 1;
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-  
-  100% {
-    transform: translateY(0);
-  }
+    opacity: 1;}
+  50% {transform: translateY(-10px);}
+  100% {transform: translateY(0);}
 }
 
 @keyframes FadeIn {
- 0%{
-    opacity: 0;
- }
-100%{
-    opacity:1;
-}
-
+ 0%{opacity: 0;}
+100%{opacity:1;}
 }
 
 @keyframes errorMessage{
+    0%{opacity: 1;}
+    50%{opacity:0;}
+    100%{opacity:1;}
+}
 
-    0%{
-        opacity: 1;
-
-    }
-    50%{
-        opacity:0;
-    }
-    100%{
-        opacity:1;
-    }
+@keyframes slideUp{
+    from{transform:translateY(20px);opacity:0;}
+    to{transform:translateY(0);opacity:1;}
 }
